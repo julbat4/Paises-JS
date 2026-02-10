@@ -1,0 +1,148 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle, #3b4382 0%, #242a5d 100%); /* Degradado azul */
+    background-attachment: fixed;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 2. Cabecera (Título e Input) */
+.title {
+    font-size: 3.5rem;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+#search {
+    background: rgba(30, 30, 30, 0.9); /* Fondo oscuro del input */
+    border: 2px solid #5d68d1; /* Borde azul brillante */
+    border-radius: 8px;
+    color: white;
+    padding: 12px 25px;
+    width: 400px;
+    font-size: 1.1rem;
+    text-align: center;
+    outline: none;
+    margin-bottom: 30px;
+}
+
+/* 3. Mensajes de Estado */
+.msg {
+    margin-top: 100px;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+/* 4. Cuadrícula de Países (Estado < 10) */
+#container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+.country-card {
+    background: #2b326d; /* Color de tarjeta azul */
+    border-radius: 12px;
+    width: 240px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    transition: transform 0.2s;
+}
+
+.country-card:hover {
+    transform: translateY(-5px);
+}
+
+.country-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* Asegura que la bandera no se deforme */
+}
+
+.country-card p {
+    padding: 15px;
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: #1e234a; /* Fondo más oscuro para el texto */
+}
+
+/* 5. Tarjeta de Detalle (Estado = 1) */
+.detail-card {
+    display: flex;
+    background: rgba(30, 37, 94, 0.85); /* Fondo azul translúcido */
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 850px;
+    margin-top: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+}
+
+.detail-flag-container {
+    width: 55%; /* La bandera ocupa un poco más de la mitad */
+    position: relative;
+}
+
+.detail-flag-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 6. Barra de Clima Roja */
+.weather-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #4a1010; /* Rojo oscuro de la imagen */
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+/* 7. Información del Detalle */
+.detail-info {
+    width: 45%;
+    padding: 40px;
+    text-align: left; /* Alineado a la izquierda */
+}
+
+.detail-info h2 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.detail-info p {
+    font-size: 1.2rem;
+    margin: 12px 0;
+    line-height: 1.4;
+}
+
+/* Diseño responsivo para móviles */
+@media (max-width: 768px) {
+    .detail-card {
+        flex-direction: column;
+    }
+    .detail-flag-container, .detail-info {
+        width: 100%;
+    }
+    #search {
+        width: 80%;
+    }
+}
